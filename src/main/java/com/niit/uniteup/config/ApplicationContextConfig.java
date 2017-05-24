@@ -1,4 +1,3 @@
-
 package com.niit.uniteup.config;
 
 import java.util.Properties;
@@ -19,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.uniteup.model.Blog;
 import com.niit.uniteup.model.BlogLikes;
+import com.niit.uniteup.model.Event;
 import com.niit.uniteup.model.Forum;
 import com.niit.uniteup.model.ForumComment;
 import com.niit.uniteup.model.Friend;
@@ -75,6 +75,7 @@ public class ApplicationContextConfig {
 		  sessionBuilder.addAnnotatedClasses(Forum.class);
 		  sessionBuilder.addAnnotatedClasses(ForumComment.class);
 		 sessionBuilder.addAnnotatedClasses(BlogLikes.class);
+		 sessionBuilder.addAnnotatedClasses(Event.class);
 
 		logger.debug("Ending of the method getSessionFactory");
 		System.err.println("session is created.............!");

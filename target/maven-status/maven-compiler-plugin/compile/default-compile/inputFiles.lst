@@ -1,4 +1,5 @@
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\JobDAOImpl.java
+G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\model\Event.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\BlogLikesDAOImpl.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\model\OutputMessage.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\FriendDAO.java
@@ -7,12 +8,14 @@ G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\FriendDAOImp
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\BlogDAO.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\ForumDAO.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\BlogLikesDAO.java
+G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\EventDAOImpl.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\ForumCommentDAO.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\model\Friend.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\ForumCommentDAOImpl.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\ForumDAOImpl.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\BlogDAOImpl.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\config\WebSocketConfig.java
+G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\EventDAO.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\dao\JobDAO.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\config\ApplicationContextConfig.java
 G:\2ndproject\UniteUpBackEnd\src\main\java\com\niit\uniteup\daoimpl\UsersDAOImpl.java

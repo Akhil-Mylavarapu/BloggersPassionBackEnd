@@ -99,10 +99,11 @@ public class UsersDAOImpl implements UsersDAO {
 
 	@SuppressWarnings({ "unchecked" })
 	@Transactional
-	public List<Users> nonfriends(int id, String username) {
-		String hql = "from Users where username!='" +username+ "'"+   " union "   +
-		" from Users where username not in(SELECT friendid from Friend where userid='" + username
-				+ "'and status='A')";
+	public List<Users> nonfriends(String username) {
+		
+		
+		String hql = " from Users where username not in(SELECT friendid from Friend where userid='" + username
+				+ "'and status='A'" + " union " + "SELECT username from Users where username='"+username+"')";
 		return sessionFactory.getCurrentSession().createQuery(hql).list();
 	}
 
