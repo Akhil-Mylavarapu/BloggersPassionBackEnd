@@ -71,9 +71,9 @@ public class UsersDAOImpl implements UsersDAO {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Transactional
 	public Users authuser(String username, String password) {
-		String hql = "from Users where username= " + "'" + username + "'" + "and password= " + "'" + password + "'";
+		String hql = "from Users where username= " + ":parameter0" + "and password= " + ":parameter1";
 
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", username).setParameter(":parameter1", password);
 		List<Users> list = query.list();
 		if (list.isEmpty()) {
 			return null;
@@ -102,9 +102,9 @@ public class UsersDAOImpl implements UsersDAO {
 	public List<Users> nonfriends(String username) {
 		
 		
-		String hql = " from Users where username not in(SELECT friendid from Friend where userid='" + username
-				+ "'and status='A'" + " union " + "SELECT username from Users where username='"+username+"')";
-		return sessionFactory.getCurrentSession().createQuery(hql).list();
+		String hql = " from Users where username not in(SELECT friendid from Friend where userid=:parameter0"
+				+ "and status='A:parameter1"+")";
+		return sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", username).setParameter(":parameter1", " union " + "SELECT username from Users where username='" + username).list();
 	}
 
 	/*
@@ -119,8 +119,8 @@ public class UsersDAOImpl implements UsersDAO {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Transactional
 	public Users profileof(String username) {
-		String hql = "from Users where username='" + username + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		String hql = "from Users where username=:parameter0";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", username);
 		List<Users> list = query.list();
 
 		if (list.isEmpty()) {
