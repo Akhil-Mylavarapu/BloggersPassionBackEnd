@@ -47,8 +47,8 @@ public class FriendDAOImpl implements FriendDAO {
 @SuppressWarnings({ "rawtypes", "unchecked" })
 @Transactional
 public Friend newrequest(String uid,String fid) {
-	String hql="from Friend where userid='"+uid+"' and friendid='"+fid+"'";
-	Query query =sessionFactory.getCurrentSession().createQuery(hql);
+	String hql="from Friend where userid=:parameter0"+" and friendid=:parameter1";
+	Query query =sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", uid).setParameter(":parameter1", fid);
 	List<Friend> list=query.list();
 	if(list==null){
 		return null;
@@ -59,9 +59,9 @@ public Friend newrequest(String uid,String fid) {
 
 @Transactional
 public List<Friend> getfriendlist(String uid) {
-	String hql="from Friend where userid='"+uid+"' and status='A'";
+	String hql="from Friend where userid=:parameter0"+" and status='A'";
 	@SuppressWarnings("rawtypes")
-	Query query=sessionFactory.getCurrentSession().createQuery(hql);
+	Query query=sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", uid);
 	@SuppressWarnings("unchecked")
 	List<Friend> list = query.list();
 	return list;
@@ -69,9 +69,9 @@ public List<Friend> getfriendlist(String uid) {
 
 @Transactional
 public List<Friend> getrequestlist(String uid) {
-	String hql="from Friend where friendid='"+uid+"' and status='N'";
+	String hql="from Friend where friendid=:parameter0"+" and status='N'";
 	@SuppressWarnings("rawtypes")
-	Query query=sessionFactory.getCurrentSession().createQuery(hql);
+	Query query=sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", uid);
 	@SuppressWarnings("unchecked")
 	List<Friend> list = query.list();
 	return list;
@@ -79,9 +79,9 @@ public List<Friend> getrequestlist(String uid) {
 
 @Transactional
 public List<Friend> setonline(String uid) {
-	String hql="from Friend where friendid='"+uid+"'";
+	String hql="from Friend where friendid=:parameter0";
 	@SuppressWarnings("rawtypes")
-	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	Query query = sessionFactory.getCurrentSession().createQuery(hql).setParameter(":parameter0", uid);
 	@SuppressWarnings("unchecked")
 	List<Friend> list=query.list();
 	return list;
